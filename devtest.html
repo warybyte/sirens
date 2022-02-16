@@ -1,0 +1,23 @@
+<html>
+ <body>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+       mermaid.initialize({ startOnLoad: true });
+  </script>
+
+Basic DEV Environment
+
+   <div class="mermaid">
+       flowchart TD
+       A[Client] --> |test-proxy.lcl 443| B(Loadbalancer)
+       B ---> |8000| C[appserv1.lcl] 
+       B -.-x |8000| D[appserv2.lcl]
+       B ---> |8100| C[appserv1.lcl] 
+       B -.-x |8100| D[appserv2.lcl]
+       B ---> |8200| C[appserv1.lcl] 
+       B -.-x |8200| D[appserv2.lcl]
+       B ---> |8300| C[appserv1.lcl] 
+       B -.-x |8300| D[appserv2.lcl]
+   </div>	
+ </body>
+</html>
